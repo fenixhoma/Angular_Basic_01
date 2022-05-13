@@ -1,0 +1,24 @@
+<p>lists works!</p>
+
+<div *ngIf="heroRemoved; else notRemoved">
+    <strong>A record was Removed</strong>
+    <br>
+    <span>{{ heroRemoved }}</span>
+</div>
+<br>
+
+<ng-template #notRemoved>
+    <strong>No records have been Removed</strong>
+</ng-template>
+<br>
+
+<button (click)="deleteHero()">
+    Remove
+</button>
+
+<ul>
+    <li *ngFor="let hero of heroes; let i = index">
+       {{ i + 1 }} - {{ hero }}
+    </li>
+</ul>
+
